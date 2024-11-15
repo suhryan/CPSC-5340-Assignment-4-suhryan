@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// coordinate views
 struct ContentView: View {
     @StateObject private var authViewModel = AuthViewModel()
 

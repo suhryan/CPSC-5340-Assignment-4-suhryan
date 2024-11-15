@@ -4,14 +4,16 @@
 //
 //  Created by ryan suh on 11/14/24.
 //
+// Authentication logic and state
 
 import Foundation
 import FirebaseAuth
 
 class AuthViewModel: ObservableObject {
     @Published var isSignedIn = false
-    @Published var errorMessage: String?
+    @Published var errorMessage: String? //error messages during login/signup
 
+    // set initial login state
     init() {
         isSignedIn = Auth.auth().currentUser != nil
     }
@@ -63,7 +65,7 @@ class AuthViewModel: ObservableObject {
             try Auth.auth().signOut()
             DispatchQueue.main.async {
                 self.isSignedIn = false
-                self.errorMessage = nil
+                self.errorMessage = nil //to clear LoginView display of error
             }
         } catch let error {
             print("Error signing out: \(error.localizedDescription)")

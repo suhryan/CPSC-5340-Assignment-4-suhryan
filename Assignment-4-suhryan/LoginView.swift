@@ -4,6 +4,7 @@
 //
 //  Created by ryan suh on 11/14/24.
 //
+// Login/signup view
 
 import SwiftUI
 
@@ -18,6 +19,8 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
+                .padding()
+            Text("Login or Signup with your email/password")
                 .padding()
             Spacer()
             VStack {
@@ -49,7 +52,8 @@ struct LoginView: View {
         .padding()
     }
 }
-
+/*
 #Preview {
     LoginView()
 }
+*/

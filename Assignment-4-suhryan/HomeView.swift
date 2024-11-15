@@ -4,6 +4,7 @@
 //
 //  Created by ryan suh on 11/14/24.
 //
+// View shown after successful login
 
 import SwiftUI
 
