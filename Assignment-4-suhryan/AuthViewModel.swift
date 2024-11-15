@@ -16,6 +16,7 @@ class AuthViewModel: ObservableObject {
         isSignedIn = Auth.auth().currentUser != nil
     }
 
+    //Use Firebase Authentication to log in with email and password
     func login(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
             DispatchQueue.main.async {
@@ -28,6 +29,7 @@ class AuthViewModel: ObservableObject {
         }
     }
 
+    //Creates a new user using Firebase Authentication
     func signup(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             DispatchQueue.main.async {
@@ -37,6 +39,18 @@ class AuthViewModel: ObservableObject {
                     self?.isSignedIn = true
                 }
             }
+        }
+    }
+    
+    //Log out the user using Firebase Authentication
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            DispatchQueue.main.async {
+                self.isSignedIn = false
+            }
+        } catch let error {
+            print("Error signing out: \(error.localizedDescription)")
         }
     }
 }
