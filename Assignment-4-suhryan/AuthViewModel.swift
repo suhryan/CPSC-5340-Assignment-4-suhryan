@@ -28,5 +28,15 @@ class AuthViewModel: ObservableObject {
         }
     }
 
-
+    func signup(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self?.errorMessage = error.localizedDescription
+                } else {
+                    self?.isSignedIn = true
+                }
+            }
+        }
+    }
 }
