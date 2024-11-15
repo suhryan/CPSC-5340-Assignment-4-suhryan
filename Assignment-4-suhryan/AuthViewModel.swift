@@ -63,6 +63,7 @@ class AuthViewModel: ObservableObject {
             try Auth.auth().signOut()
             DispatchQueue.main.async {
                 self.isSignedIn = false
+                self.errorMessage = nil
             }
         } catch let error {
             print("Error signing out: \(error.localizedDescription)")
