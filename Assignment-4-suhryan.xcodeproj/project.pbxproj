@@ -39,6 +39,7 @@
 		5CB2AD2F2CE7006D00923711 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 5CB2AD2E2CE7006D00923711 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		5CB2AD312CE7006D00923711 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 5CB2AD302CE7006D00923711 /* FirebaseAppCheck */; };
 		5CB2AD332CE7006D00923711 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5CB2AD322CE7006D00923711 /* FirebaseAppDistribution-Beta */; };
+		5CB2AD352CE703B400923711 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2AD342CE703B400923711 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5C3024F72CE6F0E400DB4D9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C3024FA2CE6F0E400DB4D9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C3025012CE6F2B000DB4D9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5CB2AD342CE703B400923711 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				5C3024F52CE6F0D600DB4D9D /* ContentView.swift */,
 				5C3024F72CE6F0E400DB4D9D /* Assets.xcassets */,
 				5C3024F92CE6F0E400DB4D9D /* Preview Content */,
+				5CB2AD342CE703B400923711 /* AuthViewModel.swift */,
 			);
 			path = "Assignment-4-suhryan";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				5C3024F62CE6F0D600DB4D9D /* ContentView.swift in Sources */,
 				5C3024F42CE6F0D600DB4D9D /* Assignment_4_suhryanApp.swift in Sources */,
+				5CB2AD352CE703B400923711 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
