@@ -20,10 +20,25 @@ class AuthViewModel: ObservableObject {
     func login(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
             DispatchQueue.main.async {
-                if let error = error {
-                    self?.errorMessage = error.localizedDescription
+                if let error = error as NSError? {
+                    print("Error code: \(error.code), Message: \(error.localizedDescription)")
+                    if let authErrorCode = AuthErrorCode(rawValue: error.code) {
+                        switch authErrorCode {
+                        case .wrongPassword:
+                            self?.errorMessage = "Incorrect password. Please try again."
+                        case .invalidEmail:
+                            self?.errorMessage = "Invalid email format. Please check and try again."
+                        case .userNotFound:
+                            self?.errorMessage = "No account found for this email. Please sign up first."
+                        default:
+                            self?.errorMessage = "Authentication error. Please check your email and password."
+                        }
+                    } else {
+                        self?.errorMessage = "An unexpected error occurred: \(error.localizedDescription)"
+                    }
                 } else {
                     self?.isSignedIn = true
+                    self?.errorMessage = nil
                 }
             }
         }

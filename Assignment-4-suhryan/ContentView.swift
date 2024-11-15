@@ -12,7 +12,8 @@ struct ContentView: View {
 
     var body: some View {
         if authViewModel.isSignedIn {
-            //display a view with success login message
+            HomeView()
+                .environmentObject(authViewModel)
         } else {
             LoginView()
                 .environmentObject(authViewModel)
