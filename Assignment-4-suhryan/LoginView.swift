@@ -27,10 +27,20 @@ struct LoginView: View {
                     .foregroundColor(.red)
                     .padding()
             }
+            Button("Login") {
+                authViewModel.login(email: email, password: password)
+            }
+            .padding()
+
+            Button("Sign Up") {
+                authViewModel.signup(email: email, password: password)
+            }
+            .padding()
         }
         .padding()
     }
 }
+
 #Preview {
     LoginView()
 }
