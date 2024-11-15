@@ -12,13 +12,22 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
-            Text("You are logged in")
-                .font(.title)
+            Text("Authenticate")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.center)
                 .padding()
-            Button("Logout") {
-                authViewModel.logout()
+            Spacer()
+            VStack {
+                Text("You are logged in")
+                    .font(.title)
+                    .padding()
+                Button("Logout") {
+                    authViewModel.logout()
+                }
+                .padding()
             }
-            .padding()
+            Spacer()
         }
     }
 }

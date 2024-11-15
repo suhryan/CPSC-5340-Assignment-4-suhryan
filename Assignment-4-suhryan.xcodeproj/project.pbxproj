@@ -115,12 +115,12 @@
 			children = (
 				5C3025012CE6F2B000DB4D9D /* GoogleService-Info.plist */,
 				5C3024F32CE6F0D600DB4D9D /* Assignment_4_suhryanApp.swift */,
-				5C3024F52CE6F0D600DB4D9D /* ContentView.swift */,
-				5C3024F72CE6F0E400DB4D9D /* Assets.xcassets */,
-				5C3024F92CE6F0E400DB4D9D /* Preview Content */,
 				5CB2AD342CE703B400923711 /* AuthViewModel.swift */,
+				5C3024F52CE6F0D600DB4D9D /* ContentView.swift */,
 				5CB2AD362CE7088300923711 /* LoginView.swift */,
 				5CB2AD382CE70C6A00923711 /* HomeView.swift */,
+				5C3024F72CE6F0E400DB4D9D /* Assets.xcassets */,
+				5C3024F92CE6F0E400DB4D9D /* Preview Content */,
 			);
 			path = "Assignment-4-suhryan";
 			sourceTree = "<group>";

@@ -14,28 +14,37 @@ struct LoginView: View {
 
     var body: some View {
         VStack {
-            TextField("Email", text: $email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.emailAddress)
-                .autocapitalization(.none)
+            Text("Authenticate")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.center)
                 .padding()
-            SecureField("Password", text: $password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            if let errorMessage = authViewModel.errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
+            Spacer()
+            VStack {
+                TextField("Email", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
                     .padding()
-            }
-            Button("Login") {
-                authViewModel.login(email: email, password: password)
-            }
-            .padding()
+                SecureField("Password", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                if let errorMessage = authViewModel.errorMessage {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                Button("Login") {
+                    authViewModel.login(email: email, password: password)
+                }
+                .padding()
 
-            Button("Sign Up") {
-                authViewModel.signup(email: email, password: password)
+                Button("Sign Up") {
+                    authViewModel.signup(email: email, password: password)
+                }
+                .padding()
             }
-            .padding()
+            Spacer()
         }
         .padding()
     }
